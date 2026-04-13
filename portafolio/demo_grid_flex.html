@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo: Grid vs Flexbox</title>
+    <style>
+
+      /* ========================
+         BASE
+         ======================== */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 8px;
+        color: #f8fafc;
+      }
+
+      .intro {
+        text-align: center;
+        color: #94a3b8;
+        margin-bottom: 50px;
+        font-size: 1rem;
+      }
+
+      /* Títulos de sección */
+      .seccion-titulo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 6px;
+        padding: 6px 14px;
+        border-radius: 6px;
+        display: inline-block;
+      }
+
+      .titulo-grid  { background: #7c3aed; color: #fff; }
+      .titulo-flex  { background: #0891b2; color: #fff; }
+
+      .seccion-desc {
+        color: #94a3b8;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+      }
+
+      .bloque {
+        background: #1e293b;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 40px;
+        border: 1px solid #334155;
+      }
+
+      /* Etiqueta de código */
+      code {
+        background: #0f172a;
+        color: #34d399;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+
+      /* Celdas de ejemplo */
+      .caja {
+        background: #7c3aed;
+        color: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .caja-flex {
+        background: #0891b2;
+        color: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      /* Variantes de color para diferenciar cajas */
+      .caja:nth-child(2), .caja-flex:nth-child(2) { filter: brightness(1.2); }
+      .caja:nth-child(3), .caja-flex:nth-child(3) { filter: brightness(0.85); }
+      .caja:nth-child(4), .caja-flex:nth-child(4) { filter: brightness(1.35); }
+      .caja:nth-child(5), .caja-flex:nth-child(5) { filter: brightness(0.7); }
+      .caja:nth-child(6), .caja-flex:nth-child(6) { filter: brightness(1.5); }
+
+      /* ========================
+         EJEMPLOS CSS GRID
+         ======================== */
+
+      /* Grid 1: 3 columnas iguales */
+      .grid-3col {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+      }
+
+      /* Grid 2: columnas distintas */
+      .grid-asimetrico {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 12px;
+      }
+
+      /* Grid 3: auto-fit responsivo */
+      .grid-autofit {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+      }
+
+      /* Grid 4: elemento que ocupa varias celdas */
+      .grid-span {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 12px;
+      }
+
+      .span-2col {
+        grid-column: 1 / 3; /* ocupa columnas 1 y 2 */
+        background: #a855f7;
+      }
+
+      .span-2row {
+        grid-row: 1 / 3;    /* ocupa filas 1 y 2 */
+        background: #6d28d9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Grid 5: layout de página completa */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+          "header  header"
+          "sidebar content"
+          "footer  footer";
+        gap: 12px;
+        min-height: 220px;
+      }
+
+      .area-header  { grid-area: header;  background: #4f46e5; }
+      .area-sidebar { grid-area: sidebar; background: #7c3aed; }
+      .area-content { grid-area: content; background: #6d28d9; }
+      .area-footer  { grid-area: footer;  background: #4f46e5; }
+
+      /* ========================
+         EJEMPLOS FLEXBOX
+         ======================== */
+
+      /* Flex 1: fila (por defecto) */
+      .flex-fila {
+        display: flex;
+        gap: 12px;
+      }
+
+      /* Flex 2: columna */
+      .flex-columna {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      /* Flex 3: justify-content */
+      .flex-justify {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      /* Flex 4: align-items */
+      .flex-align {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        height: 120px;
+        background: #0f172a;
+        border-radius: 8px;
+        padding: 12px;
+      }
+
+      .caja-alto  { height: 80px; display:flex; align-items:center; justify-content:center; }
+      .caja-medio { height: 50px; display:flex; align-items:center; justify-content:center; }
+      .caja-bajo  { height: 30px; display:flex; align-items:center; justify-content:center; }
+
+      /* Flex 5: flex-wrap */
+      .flex-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .flex-wrap .caja-flex {
+        flex: 1 1 120px; /* crece, se encoge, base 120px */
+      }
+
+      /* Flex 6: flex-grow */
+      .flex-grow {
+        display: flex;
+        gap: 12px;
+      }
+
+      .grow-1 { flex-grow: 1; }
+      .grow-2 { flex-grow: 2; }
+      .grow-3 { flex-grow: 3; }
+
+      /* ========================
+         COMPARATIVA FINAL
+         ======================== */
+      .tabla-comp {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+
+      .tabla-comp th {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #334155;
+      }
+
+      .tabla-comp td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #1e293b;
+        color: #cbd5e1;
+      }
+
+      .tabla-comp tr:hover td { background: #1e293b; }
+
+      .th-grid  { color: #a78bfa; }
+      .th-flex  { color: #38bdf8; }
+
+    </style>
+  </head>
+  <body>
+
+    <h1>CSS Grid vs Flexbox</h1>
+    <p class="intro">Ejemplos visuales e interactivos de ambos sistemas de layout</p>
+
+    <!-- ==============================
+         SECCIÓN: CSS GRID
+         ============================== -->
+
+    <!-- Grid 1 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-grid">CSS Grid</span>
+      <p class="seccion-desc">Ejemplo 1 — <code>grid-template-columns: 1fr 1fr 1fr</code> — 3 columnas iguales</p>
+      <div class="grid-3col">
+        <div class="caja">Caja 1</div>
+        <div class="caja">Caja 2</div>
+        <div class="caja">Caja 3</div>
+        <div class="caja">Caja 4</div>
+        <div class="caja">Caja 5</div>
+        <div class="caja">Caja 6</div>
+      </div>
+    </div>
+
+    <!-- Grid 2 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-grid">CSS Grid</span>
+      <p class="seccion-desc">Ejemplo 2 — <code>grid-template-columns: 2fr 1fr 1fr</code> — columnas asimétricas</p>
+      <div class="grid-asimetrico">
+        <div class="caja">2fr (doble)</div>
+        <div class="caja">1fr</div>
+        <div class="caja">1fr</div>
+      </div>
+    </div>
+
+    <!-- Grid 3 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-grid">CSS Grid</span>
+      <p class="seccion-desc">Ejemplo 3 — <code>repeat(auto-fit, minmax(120px, 1fr))</code> — responsivo automático</p>
+      <div class="grid-autofit">
+        <div class="caja">A</div>
+        <div class="caja">B</div>
+        <div class="caja">C</div>
+        <div class="caja">D</div>
+        <div class="caja">E</div>
+        <div class="caja">F</div>
+      </div>
+    </div>
+
+    <!-- Grid 4 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-grid">CSS Grid</span>
+      <p class="seccion-desc">Ejemplo 4 — <code>grid-column</code> y <code>grid-row</code> — elementos que ocupan varias celdas</p>
+      <div class="grid-span">
+        <div class="caja span-2col">grid-column: 1/3 (ocupa 2 columnas)</div>
+        <div class="caja span-2row">grid-row: 1/3 (ocupa 2 filas)</div>
+        <div class="caja">Normal</div>
+        <div class="caja">Normal</div>
+      </div>
+    </div>
+
+    <!-- Grid 5 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-grid">CSS Grid</span>
+      <p class="seccion-desc">Ejemplo 5 — <code>grid-template-areas</code> — layout de página completa</p>
+      <div class="grid-layout">
+        <div class="caja area-header" style="padding:14px; text-align:center;">HEADER</div>
+        <div class="caja area-sidebar" style="padding:14px; text-align:center;">SIDEBAR</div>
+        <div class="caja area-content" style="padding:14px; text-align:center;">CONTENT</div>
+        <div class="caja area-footer" style="padding:14px; text-align:center;">FOOTER</div>
+      </div>
+    </div>
+
+    <!-- ==============================
+         SECCIÓN: FLEXBOX
+         ============================== -->
+
+    <!-- Flex 1 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-flex">Flexbox</span>
+      <p class="seccion-desc">Ejemplo 1 — <code>display: flex</code> — fila por defecto</p>
+      <div class="flex-fila">
+        <div class="caja-flex" style="flex:1">Item 1</div>
+        <div class="caja-flex" style="flex:1">Item 2</div>
+        <div class="caja-flex" style="flex:1">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Flex 2 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-flex">Flexbox</span>
+      <p class="seccion-desc">Ejemplo 2 — <code>flex-direction: column</code> — apilado vertical</p>
+      <div class="flex-columna">
+        <div class="caja-flex">Item 1</div>
+        <div class="caja-flex">Item 2</div>
+        <div class="caja-flex">Item 3</div>
+      </div>
+    </div>
+
+    <!-- Flex 3 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-flex">Flexbox</span>
+      <p class="seccion-desc">Ejemplo 3 — <code>justify-content: space-between</code> — distribución horizontal</p>
+      <div class="flex-justify">
+        <div class="caja-flex">Izquierda</div>
+        <div class="caja-flex">Centro</div>
+        <div class="caja-flex">Derecha</div>
+      </div>
+    </div>
+
+    <!-- Flex 4 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-flex">Flexbox</span>
+      <p class="seccion-desc">Ejemplo 4 — <code>align-items: center</code> — alineación vertical</p>
+      <div class="flex-align">
+        <div class="caja-flex caja-alto" style="flex:1">Alto</div>
+        <div class="caja-flex caja-medio" style="flex:1">Medio</div>
+        <div class="caja-flex caja-bajo" style="flex:1">Bajo</div>
+      </div>
+    </div>
+
+    <!-- Flex 5 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-flex">Flexbox</span>
+      <p class="seccion-desc">Ejemplo 5 — <code>flex-wrap: wrap</code> — elementos que se envuelven solos</p>
+      <div class="flex-wrap">
+        <div class="caja-flex">Item 1</div>
+        <div class="caja-flex">Item 2</div>
+        <div class="caja-flex">Item 3</div>
+        <div class="caja-flex">Item 4</div>
+        <div class="caja-flex">Item 5</div>
+        <div class="caja-flex">Item 6</div>
+      </div>
+    </div>
+
+    <!-- Flex 6 -->
+    <div class="bloque">
+      <span class="seccion-titulo titulo-flex">Flexbox</span>
+      <p class="seccion-desc">Ejemplo 6 — <code>flex-grow</code> — proporciones de crecimiento (1 : 2 : 3)</p>
+      <div class="flex-grow">
+        <div class="caja-flex grow-1">grow: 1</div>
+        <div class="caja-flex grow-2">grow: 2</div>
+        <div class="caja-flex grow-3">grow: 3</div>
+      </div>
+    </div>
+
+    <!-- ==============================
+         COMPARATIVA
+         ============================== -->
+    <div class="bloque">
+      <span class="seccion-titulo" style="background:#334155; color:#f1f5f9">¿Cuándo usar cada uno?</span>
+      <br /><br />
+      <table class="tabla-comp">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="th-grid">CSS Grid</th>
+            <th class="th-flex">Flexbox</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dimensiones</td>
+            <td>2D (filas + columnas)</td>
+            <td>1D (fila O columna)</td>
+          </tr>
+          <tr>
+            <td>Ideal para</td>
+            <td>Layouts de página completa</td>
+            <td>Componentes y barras de nav</td>
+          </tr>
+          <tr>
+            <td>Control</td>
+            <td>Desde el contenedor</td>
+            <td>Contenedor + hijos</td>
+          </tr>
+          <tr>
+            <td>Responsivo</td>
+            <td>auto-fit / minmax</td>
+            <td>flex-wrap / flex-grow</td>
+          </tr>
+          <tr>
+            <td>Ejemplo típico</td>
+            <td>Dashboard, galería, página</td>
+            <td>Navbar, botones, cards</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
