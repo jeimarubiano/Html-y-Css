@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía JavaScript</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #0d1117; color: #e6edf3; padding: 30px; }
+        section { background: #161b22; border-radius: 10px; padding: 20px; margin-bottom: 25px; border-left: 5px solid #f0db4f; }
+        h1 { text-align: center; margin-bottom: 30px; color: #f0db4f; }
+        h2 { color: #f0db4f; margin-bottom: 10px; }
+        h3 { color: #79c0ff; margin: 12px 0 5px; }
+        p  { color: #8b949e; margin-bottom: 8px; line-height: 1.6; }
+        pre { background: #0d1117; color: #e6edf3; padding: 15px; border-radius: 8px; overflow-x: auto; margin-top: 10px; font-size: 14px; border: 1px solid #30363d; }
+        .resultado { background: #1c2128; border: 2px dashed #f0db4f; border-radius: 8px; padding: 15px; margin-top: 10px; }
+        button { padding: 8px 16px; background: #f0db4f; color: #000; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold; margin: 4px; }
+        button:hover { background: #fff; }
+        input { padding: 8px; border: 1px solid #30363d; border-radius: 6px; background: #0d1117; color: white; font-size: 14px; }
+        .nota { background: #1f2937; border-left: 4px solid #79c0ff; padding: 10px; border-radius: 4px; margin-top: 8px; font-size: 13px; color: #8b949e; }
+    </style>
+</head>
+<body>
+
+<h1>⚡ Guía Completa de JavaScript</h1>
+<p style="text-align:center; color:#8b949e; margin-bottom:30px;">JavaScript hace que las páginas web sean interactivas. Con HTML pones el contenido, con CSS lo diseñas, y con JS lo haces funcionar.</p>
+
+<!-- ============================================================
+     1. CÓMO CONECTAR JS AL HTML
+============================================================ -->
+<section>
+    <h2>1. Cómo conectar JavaScript al HTML</h2>
+    <p>Igual que el CSS, hay dos formas. La mejor es un archivo separado.</p>
+    <pre>
+&lt;!-- FORMA 1: Archivo separado (recomendada) --&gt;
+&lt;!-- Va al final del body, antes de &lt;/body&gt; --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;!-- FORMA 2: Directo en el HTML --&gt;
+&lt;script&gt;
+    console.log("Hola mundo");
+&lt;/script&gt;
+
+&lt;!-- Por qué al final del body?
+     Para que el HTML cargue primero y JS pueda encontrar los elementos --&gt;</pre>
+    <div class="nota">console.log() muestra mensajes en la consola del navegador. Para abrirla: F12 → pestaña "Console"</div>
+</section>
+
+<!-- ============================================================
+     2. VARIABLES
+============================================================ -->
+<section>
+    <h2>2. Variables</h2>
+    <p>Guardan información. En JS moderno se usan <strong>let</strong> y <strong>const</strong>.</p>
+    <pre>
+let nombre = "Naruto";       // let: puede cambiar su valor
+const PI = 3.1416;           // const: no puede cambiar (constante)
+
+// Tipos de datos
+let texto = "Hola";          // string (texto, va entre comillas)
+let numero = 25;             // number (número)
+let decimal = 3.14;          // number decimal
+let activo = true;           // boolean (true o false)
+let vacio = null;            // null (vacío intencionalmente)
+let sinDefinir = undefined;  // undefined (no tiene valor aún)
+
+// Ver el valor en consola
+console.log(nombre);         // → Naruto
+console.log(typeof nombre);  // → string (dice el tipo)</pre>
+    <div class="nota">Diferencia clave: usa <strong>const</strong> por defecto. Solo usa <strong>let</strong> si el valor va a cambiar. Evita <strong>var</strong> (es viejo y tiene problemas).</div>
+</section>
+
+<!-- ============================================================
+     3. OPERADORES
+============================================================ -->
+<section>
+    <h2>3. Operadores</h2>
+    <pre>
+// MATEMÁTICOS
+5 + 3   // → 8   suma
+5 - 3   // → 2   resta
+5 * 3   // → 15  multiplicación
+5 / 2   // → 2.5 división
+5 % 2   // → 1   módulo (resto de la división)
+2 ** 3  // → 8   potencia (2³)
+
+// COMPARACIÓN (devuelven true o false)
+5 == "5"   // → true  (compara solo el valor, no el tipo)
+5 === "5"  // → false (compara valor Y tipo) ← usa siempre este
+5 !== 3    // → true  (diferente)
+5 > 3      // → true  (mayor que)
+5 < 3      // → false (menor que)
+5 >= 5     // → true  (mayor o igual)
+
+// LÓGICOS
+true && false  // → false  (AND: los dos deben ser true)
+true || false  // → true   (OR: al menos uno debe ser true)
+!true          // → false  (NOT: invierte el valor)
+
+// ASIGNACIÓN
+let x = 5;
+x += 3;   // x = x + 3 → 8
+x -= 2;   // x = x - 2 → 6
+x *= 2;   // x = x * 2 → 12
+x++;      // x = x + 1 → 13
+x--;      // x = x - 1 → 12</pre>
+</section>
+
+<!-- ============================================================
+     4. STRINGS (texto)
+============================================================ -->
+<section>
+    <h2>4. Strings - trabajar con texto</h2>
+    <pre>
+const nombre = "Naruto";
+const apellido = "Uzumaki";
+
+// Unir strings
+const completo = nombre + " " + apellido;  // "Naruto Uzumaki"
+
+// Template literals (la forma moderna, usa backticks `)
+const saludo = `Hola, soy ${nombre} ${apellido}`;
+// → "Hola, soy Naruto Uzumaki"
+
+// Métodos útiles
+nombre.length           // → 6       (cantidad de caracteres)
+nombre.toUpperCase()    // → "NARUTO" (todo mayúsculas)
+nombre.toLowerCase()    // → "naruto" (todo minúsculas)
+nombre.includes("aru")  // → true     (contiene ese texto?)
+nombre.startsWith("Na") // → true     (empieza con?)
+nombre.endsWith("to")   // → true     (termina con?)
+nombre.replace("Naruto", "Sasuke") // → "Sasuke"
+nombre.trim()           // quita espacios al inicio y al final
+nombre.split("")        // divide en array de caracteres
+"  hola  ".trim()       // → "hola"
+
+// Acceder a un carácter
+nombre[0]               // → "N" (primer carácter)
+nombre[nombre.length-1] // → "o" (último carácter)</pre>
+</section>
+
+<!-- ============================================================
+     5. CONDICIONALES
+============================================================ -->
+<section>
+    <h2>5. Condicionales - tomar decisiones</h2>
+    <pre>
+// IF / ELSE IF / ELSE
+const edad = 17;
+
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else if (edad >= 13) {
+    console.log("Eres adolescente");
+} else {
+    console.log("Eres niño");
+}
+
+// OPERADOR TERNARIO (if/else en una línea)
+const mensaje = edad >= 18 ? "Mayor" : "Menor";
+// si la condición es true → "Mayor", si no → "Menor"
+
+// SWITCH (cuando hay muchas opciones)
+const dia = "lunes";
+switch (dia) {
+    case "lunes":
+        console.log("Inicio de semana");
+        break;
+    case "viernes":
+        console.log("Fin de semana!");
+        break;
+    default:
+        console.log("Día normal");
+}</pre>
+    <div class="resultado">
+        <button onclick="
+            const edad = 17;
+            if (edad >= 18) alert('Mayor de edad');
+            else if (edad >= 13) alert('Adolescente');
+            else alert('Niño');
+        ">Probar if/else</button>
+        <button onclick="
+            const n = Math.floor(Math.random()*10)+1;
+            alert(n >= 5 ? 'Número grande: ' + n : 'Número pequeño: ' + n);
+        ">Probar ternario</button>
+    </div>
+</section>
+
+<!-- ============================================================
+     6. BUCLES
+============================================================ -->
+<section>
+    <h2>6. Bucles - repetir código</h2>
+    <pre>
+// FOR: cuando sabes cuántas veces repetir
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // → 0, 1, 2, 3, 4
+}
+
+// WHILE: mientras una condición sea true
+let contador = 0;
+while (contador < 3) {
+    console.log(contador);
+    contador++;
+}
+
+// FOR...OF: recorrer un array
+const personajes = ["Naruto", "Sasuke", "Sakura"];
+for (const personaje of personajes) {
+    console.log(personaje);
+}
+
+// FOR...IN: recorrer las claves de un objeto
+const ninja = { nombre: "Naruto", aldea: "Hoja", rango: "Hokage" };
+for (const clave in ninja) {
+    console.log(clave, ":", ninja[clave]);
+}
+
+// FOREACH: método de array (más moderno)
+personajes.forEach(p => console.log(p));</pre>
+</section>
+
+<!-- ============================================================
+     7. FUNCIONES
+============================================================ -->
+<section>
+    <h2>7. Funciones</h2>
+    <pre>
+// FUNCIÓN NORMAL
+function saludar(nombre) {
+    return `Hola, ${nombre}!`;
+}
+console.log(saludar("Naruto")); // → "Hola, Naruto!"
+
+// FUNCIÓN FLECHA (arrow function, forma moderna)
+const saludar = (nombre) => `Hola, ${nombre}!`;
+
+// Si tiene una sola línea, el return es automático
+const doble = n => n * 2;
+console.log(doble(5)); // → 10
+
+// Si tiene varias líneas, necesita llaves y return
+const sumar = (a, b) => {
+    const resultado = a + b;
+    return resultado;
+};
+
+// PARÁMETROS POR DEFECTO
+function saludar(nombre = "visitante") {
+    return `Hola, ${nombre}!`;
+}
+saludar();          // → "Hola, visitante!"
+saludar("Naruto");  // → "Hola, Naruto!"</pre>
+</section>
+
+<!-- ============================================================
+     8. ARRAYS
+============================================================ -->
+<section>
+    <h2>8. Arrays - listas de datos</h2>
+    <pre>
+const frutas = ["manzana", "pera", "uva"];
+
+// Acceder
+frutas[0]           // → "manzana"
+frutas.length       // → 3
+
+// Agregar y quitar
+frutas.push("kiwi")     // agrega al final
+frutas.pop()            // quita el último
+frutas.unshift("fresa") // agrega al inicio
+frutas.shift()          // quita el primero
+
+// Buscar
+frutas.includes("pera")     // → true
+frutas.indexOf("uva")       // → 2 (posición)
+
+// Recorrer y transformar
+frutas.forEach(f => console.log(f))  // recorre sin devolver nada
+
+const mayusculas = frutas.map(f => f.toUpperCase())
+// → ["MANZANA", "PERA", "UVA"]  (crea un array nuevo)
+
+const largas = frutas.filter(f => f.length > 4)
+// → ["manzana"] (filtra los que cumplen la condición)
+
+const total = [1,2,3,4].reduce((acc, n) => acc + n, 0)
+// → 10 (acumula un valor)
+
+// Ordenar
+frutas.sort()           // ordena alfabéticamente
+[3,1,2].sort((a,b) => a - b)  // ordena números de menor a mayor
+
+// Unir y dividir
+frutas.join(", ")       // → "manzana, pera, uva"
+"a,b,c".split(",")      // → ["a", "b", "c"]</pre>
+</section>
+
+<!-- ============================================================
+     9. OBJETOS
+============================================================ -->
+<section>
+    <h2>9. Objetos</h2>
+    <pre>
+// Crear un objeto
+const ninja = {
+    nombre: "Naruto",
+    edad: 17,
+    aldea: "Hoja",
+    saludar() {                          // método dentro del objeto
+        return `Soy ${this.nombre}`;     // this = el propio objeto
+    }
+};
+
+// Acceder
+ninja.nombre          // → "Naruto"
+ninja["aldea"]        // → "Hoja"
+ninja.saludar()       // → "Soy Naruto"
+
+// Modificar y agregar
+ninja.edad = 18;
+ninja.rango = "Hokage";
+
+// Eliminar
+delete ninja.aldea;
+
+// Desestructuración (sacar propiedades en variables)
+const { nombre, edad } = ninja;
+console.log(nombre); // → "Naruto"
+
+// Spread (copiar o combinar objetos)
+const copia = { ...ninja };
+const combinado = { ...ninja, rango: "Hokage" };</pre>
+</section>
+
+<!-- ============================================================
+     10. DOM - MANIPULAR EL HTML
+============================================================ -->
+<section>
+    <h2>10. DOM - Manipular el HTML con JS</h2>
+    <p>El DOM es la representación del HTML en JS. Con él puedes cambiar texto, estilos, agregar elementos y más.</p>
+    <pre>
+// SELECCIONAR ELEMENTOS
+document.getElementById("miId")          // por id
+document.querySelector(".miClase")       // por clase (el primero)
+document.querySelectorAll(".miClase")    // todos los que coincidan
+document.querySelector("h1")            // por etiqueta
+
+// CAMBIAR CONTENIDO
+const titulo = document.querySelector("h1");
+titulo.textContent = "Nuevo título";     // cambia el texto
+titulo.innerHTML = "&lt;em&gt;Cursiva&lt;/em&gt;";  // cambia el HTML interno
+
+// CAMBIAR ESTILOS
+titulo.style.color = "red";
+titulo.style.fontSize = "32px";
+titulo.style.display = "none";          // oculta el elemento
+
+// CAMBIAR CLASES
+titulo.classList.add("activo");         // agrega clase
+titulo.classList.remove("activo");      // quita clase
+titulo.classList.toggle("activo");      // agrega si no está, quita si está
+
+// CAMBIAR ATRIBUTOS
+const img = document.querySelector("img");
+img.src = "nueva-foto.jpg";
+img.setAttribute("alt", "nueva descripción");
+
+// CREAR Y AGREGAR ELEMENTOS
+const parrafo = document.createElement("p");  // crea un &lt;p&gt;
+parrafo.textContent = "Nuevo párrafo";
+document.body.appendChild(parrafo);           // lo agrega al body
+
+// ELIMINAR ELEMENTOS
+parrafo.remove();</pre>
+    <div class="resultado">
+        <p id="demo-texto" style="color:#f0db4f; margin-bottom:8px;">Texto original</p>
+        <button onclick="document.getElementById('demo-texto').textContent = 'Texto cambiado con JS!'">Cambiar texto</button>
+        <button onclick="document.getElementById('demo-texto').style.color = '#2ecc71'">Cambiar color</button>
+        <button onclick="document.getElementById('demo-texto').textContent = 'Texto original'; document.getElementById('demo-texto').style.color = '#f0db4f'">Resetear</button>
+    </div>
+</section>
+
+<!-- ============================================================
+     11. EVENTOS
+============================================================ -->
+<section>
+    <h2>11. Eventos - reaccionar a acciones del usuario</h2>
+    <pre>
+// FORMA 1: addEventListener (recomendada)
+const boton = document.querySelector("#miBoton");
+boton.addEventListener("click", () => {
+    console.log("Hiciste click!");
+});
+
+// FORMA 2: directamente en el HTML (para cosas simples)
+&lt;button onclick="miFuncion()"&gt;Click&lt;/button&gt;
+
+// EVENTOS MÁS USADOS
+"click"        // click del mouse
+"dblclick"     // doble click
+"mouseover"    // mouse encima del elemento
+"mouseout"     // mouse sale del elemento
+"keydown"      // tecla presionada
+"keyup"        // tecla soltada
+"input"        // cuando cambia el valor de un input
+"change"       // cuando cambia y pierde el foco
+"submit"       // cuando se envía un formulario
+"load"         // cuando la página termina de cargar
+"scroll"       // cuando el usuario hace scroll
+
+// EJEMPLO: leer lo que escribe el usuario
+const campo = document.querySelector("#miInput");
+campo.addEventListener("input", (evento) => {
+    console.log(evento.target.value); // lo que escribió
+});</pre>
+    <div class="resultado">
+        <input id="demo-input" type="text" placeholder="Escribe algo..." style="margin-right:8px;">
+        <span id="demo-output" style="color:#f0db4f;"></span>
+        <script>
+            document.getElementById('demo-input').addEventListener('input', (e) => {
+                document.getElementById('demo-output').textContent = '→ ' + e.target.value;
+            });
+        </script>
+        <br><br>
+        <button id="demo-btn" onmouseover="this.textContent='¡Encima!'" onmouseout="this.textContent='Pasa el mouse'">Pasa el mouse</button>
+    </div>
+</section>
+
+<!-- ============================================================
+     12. JS EN PÁGINAS WEB - EJEMPLOS PRÁCTICOS
+============================================================ -->
+<section>
+    <h2>12. Ejemplos prácticos para páginas web</h2>
+
+    <h3>Menú hamburguesa (mostrar/ocultar)</h3>
+    <pre>
+// HTML
+&lt;button id="btn-menu"&gt;☰ Menú&lt;/button&gt;
+&lt;nav id="menu" class="oculto"&gt;
+    &lt;a href="#"&gt;Inicio&lt;/a&gt;
+    &lt;a href="#"&gt;Sobre mí&lt;/a&gt;
+&lt;/nav&gt;
+
+// CSS
+.oculto { display: none; }
+
+// JS
+document.getElementById("btn-menu").addEventListener("click", () => {
+    document.getElementById("menu").classList.toggle("oculto");
+});</pre>
+
+    <h3 style="margin-top:15px;">Cambiar tema (claro/oscuro)</h3>
+    <pre>
+document.getElementById("btn-tema").addEventListener("click", () => {
+    document.body.classList.toggle("tema-oscuro");
+});</pre>
+
+    <h3 style="margin-top:15px;">Validar un formulario</h3>
+    <pre>
+document.getElementById("formulario").addEventListener("submit", (e) => {
+    e.preventDefault(); // evita que la página se recargue
+
+    const nombre = document.getElementById("nombre").value;
+
+    if (nombre === "") {
+        alert("El nombre no puede estar vacío");
+        return;
+    }
+
+    console.log("Formulario enviado:", nombre);
+});</pre>
+
+    <h3 style="margin-top:15px;">Contador</h3>
+    <pre>
+let contador = 0;
+const display = document.getElementById("display");
+
+document.getElementById("sumar").addEventListener("click", () => {
+    contador++;
+    display.textContent = contador;
+});
+
+document.getElementById("restar").addEventListener("click", () => {
+    contador--;
+    display.textContent = contador;
+});</pre>
+    <div class="resultado">
+        <p style="font-size:32px; text-align:center; color:#f0db4f;" id="contador-display">0</p>
+        <div style="text-align:center;">
+            <button onclick="
+                let n = parseInt(document.getElementById('contador-display').textContent);
+                document.getElementById('contador-display').textContent = n - 1;
+            ">- Restar</button>
+            <button onclick="document.getElementById('contador-display').textContent = 0">Reset</button>
+            <button onclick="
+                let n = parseInt(document.getElementById('contador-display').textContent);
+                document.getElementById('contador-display').textContent = n + 1;
+            ">+ Sumar</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     13. FETCH - OBTENER DATOS DE INTERNET
+============================================================ -->
+<section>
+    <h2>13. Fetch - obtener datos de una API</h2>
+    <p>Sirve para pedir datos a un servidor sin recargar la página.</p>
+    <pre>
+// Forma básica
+fetch("https://api.ejemplo.com/datos")
+    .then(respuesta => respuesta.json())  // convierte a JSON
+    .then(datos => {
+        console.log(datos);               // usa los datos
+    })
+    .catch(error => {
+        console.log("Error:", error);     // si algo falla
+    });
+
+// Forma moderna con async/await (más fácil de leer)
+async function obtenerDatos() {
+    try {
+        const respuesta = await fetch("https://api.ejemplo.com/datos");
+        const datos = await respuesta.json();
+        console.log(datos);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+obtenerDatos();</pre>
+    <div class="nota">async/await es la forma moderna de manejar operaciones que tardan tiempo (como pedir datos a internet). await "espera" a que termine antes de continuar.</div>
+</section>
+
+<!-- ============================================================
+     14. LOCAL STORAGE - GUARDAR DATOS EN EL NAVEGADOR
+============================================================ -->
+<section>
+    <h2>14. LocalStorage - guardar datos en el navegador</h2>
+    <p>Guarda datos que persisten aunque cierres el navegador. Es como el JSON pero en el navegador.</p>
+    <pre>
+// GUARDAR
+localStorage.setItem("nombre", "Naruto");
+localStorage.setItem("edad", JSON.stringify(17)); // números y objetos con JSON.stringify
+
+// LEER
+const nombre = localStorage.getItem("nombre");    // → "Naruto"
+const edad = JSON.parse(localStorage.getItem("edad")); // → 17
+
+// ELIMINAR
+localStorage.removeItem("nombre");
+localStorage.clear(); // borra todo
+
+// EJEMPLO PRÁCTICO: guardar preferencia de tema
+document.getElementById("btn-tema").addEventListener("click", () => {
+    document.body.classList.toggle("oscuro");
+    const tema = document.body.classList.contains("oscuro") ? "oscuro" : "claro";
+    localStorage.setItem("tema", tema);
+});
+
+// Al cargar la página, aplicar el tema guardado
+const temaGuardado = localStorage.getItem("tema");
+if (temaGuardado === "oscuro") {
+    document.body.classList.add("oscuro");
+}</pre>
+</section>
+
+</body>
+</html>
