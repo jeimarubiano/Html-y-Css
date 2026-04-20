@@ -8,61 +8,101 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO: barra de navegación fija arriba -->
     <header class="cabecera">
         <h1 class="titulo">Naruto Wiki</h1>
         <nav class="menu">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="personajes.html">Personajes</a></li>
-                <li><a href="#">Aldeas</a></li>
+                <li><a href="Portafolio.html">PORTAFOLIO</a></li>
+                <li><a href="flexbox.html">FLEXBOX</a></li>
+                <li><a href="grid.html">GRID</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL: las 3 tarjetas de perfil -->
     <main class="contenedor">
 
-        <!-- Tarjeta Naruto -->
-        <article class="tarjeta">
-            <div class="fotoperfil">
-                <img src="https://imgs.search.brave.com/DQZLIVmnVWGMCEjSomqzgKQs_zllJnhXnBP8S8t337c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvaW1hZ2VuZXMt/ZGUtcGVyZmlsLWRl/LW5hcnV0by1zYTF0/ZWtnaGZhanJyOTI4/LmpwZw" alt="Naruto">
-            </div>
-            <h2 class="nombre">Naruto Uzumaki</h2>
-            <p class="rol">Hokage - Aldea de la Hoja</p>
-            <p class="descripcion">Ninja de la aldea oculta entre las hojas. Su sueño siempre fue convertirse en Hokage.</p>
-            <a class="boton" href="https://naruto.fandom.com/wiki/Naruto_Uzumaki" target="_blank">Ver perfil</a>
-        </article>
+        <!-- CARRUSEL -->
+        <div class="carrusel-wrapper">
 
-        <!-- Tarjeta Sasuke -->
-        <article class="tarjeta">
-            <div class="fotoperfil">
-                <img src="https://imgs.search.brave.com/kFNBAUdQouQhjOvFOX11Im7r3ZHfWlzCqAcXwfpv5gY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLWNsYW4u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA2L25hcnV0/by1zYXN1a2UtdWNo/aWhhLXBmcC0yNi5q/cGc" alt="Sasuke">
-            </div>
-            <h2 class="nombre">Sasuke Uchiha</h2>
-            <p class="rol">Ninja Renegado - Clan Uchiha</p>
-            <p class="descripcion">Último sobreviviente del clan Uchiha. Portador del Sharingan y rival de Naruto.</p>
-            <a class="boton" href="https://naruto.fandom.com/wiki/Sasuke_Uchiha" target="_blank">Ver perfil</a>
-        </article>
+            <!-- Tarjeta Naruto -->
+            <article class="tarjeta activa">
+                <div class="fotoperfil">
+                    <img src="https://imgs.search.brave.com/DQZLIVmnVWGMCEjSomqzgKQs_zllJnhXnBP8S8t337c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvaW1hZ2VuZXMt/ZGUtcGVyZmlsLWRl/LW5hcnV0by1zYTF0/ZWtnaGZhanJyOTI4/LmpwZw" alt="Naruto">
+                </div>
+                <h2 class="nombre">Naruto Uzumaki</h2>
+                <p class="rol">Hokage - Aldea de la Hoja</p>
+                <p class="descripcion">Ninja de la aldea oculta entre las hojas. Su sueño siempre fue convertirse en Hokage.</p>
+                <a class="boton" href="https://naruto.fandom.com/wiki/Naruto_Uzumaki" target="_blank">Ver perfil</a>
+            </article>
 
-        <!-- Tarjeta Sakura -->
-        <article class="tarjeta">
-            <div class="fotoperfil">
-                <img src="https://imgs.search.brave.com/NSUabtmRd1RE_1E5Co4ubAWuih-3nrQPn709xGgMkdc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLWNsYW4u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzEyL25hcnV0/by1zYWt1cmEtcGZw/LTE1LmpwZw" alt="Sakura">
+            <!-- Tarjeta Sasuke -->
+            <article class="tarjeta">
+                <div class="fotoperfil">
+                    <img src="https://imgs.search.brave.com/kFNBAUdQouQhjOvFOX11Im7r3ZHfWlzCqAcXwfpv5gY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLWNsYW4u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA2L25hcnV0/by1zYXN1a2UtdWNo/aWhhLXBmcC0yNi5q/cGc" alt="Sasuke">
+                </div>
+                <h2 class="nombre">Sasuke Uchiha</h2>
+                <p class="rol">Ninja Renegado - Clan Uchiha</p>
+                <p class="descripcion">Último sobreviviente del clan Uchiha. Portador del Sharingan y rival de Naruto.</p>
+                <a class="boton" href="https://naruto.fandom.com/wiki/Sasuke_Uchiha" target="_blank">Ver perfil</a>
+            </article>
+
+            <!-- Tarjeta Sakura -->
+            <article class="tarjeta">
+                <div class="fotoperfil">
+                    <img src="https://imgs.search.brave.com/NSUabtmRd1RE_1E5Co4ubAWuih-3nrQPn709xGgMkdc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLWNsYW4u/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzEyL25hcnV0/by1zYWt1cmEtcGZw/LTE1LmpwZw" alt="Sakura">
+                </div>
+                <h2 class="nombre">Sakura Haruno</h2>
+                <p class="rol">Médico Ninja - Equipo 7</p>
+                <p class="descripcion">Ninja médica del equipo 7. Discípula de Tsunade y una de las más fuertes de la aldea.</p>
+                <a class="boton" href="https://naruto.fandom.com/wiki/Sakura_Haruno" target="_blank">Ver perfil</a>
+            </article>
+
+            <!-- Controles -->
+            <div class="controles">
+                <button class="btn-carrusel" id="anterior">&#8592;</button>
+                <div class="puntos">
+                    <span class="punto activo-punto"></span>
+                    <span class="punto"></span>
+                    <span class="punto"></span>
+                </div>
+                <button class="btn-carrusel" id="siguiente">&#8594;</button>
             </div>
-            <h2 class="nombre">Sakura Haruno</h2>
-            <p class="rol">Médico Ninja - Equipo 7</p>
-            <p class="descripcion">Ninja médica del equipo 7. Discípula de Tsunade y una de las más fuertes de la aldea.</p>
-            <a class="boton" href="https://naruto.fandom.com/wiki/Sakura_Haruno" target="_blank">Ver perfil</a>
-        </article>
+
+        </div>
 
     </main>
 
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
         <p>© 2026 Naruto — Hecho por Jeimar Rubiano</p>
         <p>Todos los personajes pertenecen a Masashi Kishimoto</p>
     </footer>
+
+    <script>
+        const tarjetas = document.querySelectorAll(".tarjeta");
+        const puntos   = document.querySelectorAll(".punto");
+        let indice = 0;
+
+        function mostrar(i) {
+            tarjetas.forEach(t => t.classList.remove("activa"));
+            puntos.forEach(p => p.classList.remove("activo-punto"));
+            tarjetas[i].classList.add("activa");
+            puntos[i].classList.add("activo-punto");
+        }
+
+        document.getElementById("siguiente").addEventListener("click", () => {
+            indice = (indice + 1) % tarjetas.length;
+            mostrar(indice);
+        });
+
+        document.getElementById("anterior").addEventListener("click", () => {
+            indice = (indice - 1 + tarjetas.length) % tarjetas.length;
+            mostrar(indice);
+        });
+
+        puntos.forEach((p, i) => {
+            p.addEventListener("click", () => { indice = i; mostrar(i); });
+        });
+    </script>
 
 </body>
 </html>

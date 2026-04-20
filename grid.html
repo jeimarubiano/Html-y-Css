@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">JEIMAR RUBIANO</div>
+        <nav>
+            <a href="Portafolio.html">PORTAFOLIO</a>
+            <a href="flexbox.html">FLEXBOX</a>
+            <a href="index.html">CARRUSEL</a>
+        </nav>
+        <div class="logo2">GRID</div>
+    </header>
+
+    <main>
+
+        <!-- 1. display: grid -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">1. display: grid</h2>
+            <p class="explicacion">Es el punto de partida. Al escribir <span class="cod">display: grid</span> en un contenedor, sus hijos se organizan en una cuadricula.</p>
+            <article class="tarjeta">
+                <div class="demo-basico">
+                    <div class="caja">1</div>
+                    <div class="caja">2</div>
+                    <div class="caja">3</div>
+                    <div class="caja">4</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 2. grid-template-columns -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">2. grid-template-columns</h2>
+            <p class="explicacion">Define cuantas columnas tiene la cuadricula y que tan anchas son. Con <span class="cod">repeat(3, 1fr)</span> creas 3 columnas iguales. <span class="cod">fr</span> significa fraccion del espacio disponible.</p>
+            <article class="tarjeta tarjeta-grande">
+                <p class="label">grid-template-columns: repeat(2, 1fr)</p>
+                <div class="demo-2col">
+                    <div class="caja">A</div><div class="caja">B</div>
+                    <div class="caja">C</div><div class="caja">D</div>
+                </div>
+                <p class="label">grid-template-columns: repeat(3, 1fr)</p>
+                <div class="demo-3col">
+                    <div class="caja">A</div><div class="caja">B</div><div class="caja">C</div>
+                    <div class="caja">D</div><div class="caja">E</div><div class="caja">F</div>
+                </div>
+                <p class="label">grid-template-columns: 1fr 2fr 1fr</p>
+                <div class="demo-desigual">
+                    <div class="caja">Pequeño</div>
+                    <div class="caja">Grande</div>
+                    <div class="caja">Pequeño</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 3. grid-template-rows -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">3. grid-template-rows</h2>
+            <p class="explicacion">Define la altura de cada fila. Con <span class="cod">grid-template-rows: 80px 120px</span> la primera fila mide 80px y la segunda 120px.</p>
+            <article class="tarjeta">
+                <div class="demo-rows">
+                    <div class="caja">Fila 1 — 60px</div>
+                    <div class="caja">Fila 1 — 60px</div>
+                    <div class="caja">Fila 2 — 100px</div>
+                    <div class="caja">Fila 2 — 100px</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 4. gap -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">4. gap</h2>
+            <p class="explicacion"><span class="cod">gap</span> funciona igual que en Flexbox: define el espacio entre filas y columnas al mismo tiempo.</p>
+            <article class="tarjeta tarjeta-grande">
+                <p class="label">gap: 4px</p>
+                <div class="demo-gap-small">
+                    <div class="caja">1</div><div class="caja">2</div><div class="caja">3</div>
+                    <div class="caja">4</div><div class="caja">5</div><div class="caja">6</div>
+                </div>
+                <p class="label">gap: 20px</p>
+                <div class="demo-gap-large">
+                    <div class="caja">1</div><div class="caja">2</div><div class="caja">3</div>
+                    <div class="caja">4</div><div class="caja">5</div><div class="caja">6</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 5. grid-column y grid-row (span) -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">5. grid-column y grid-row</h2>
+            <p class="explicacion">Permiten que un elemento ocupe mas de una columna o fila. <span class="cod">grid-column: span 2</span> hace que ese elemento se extienda por 2 columnas.</p>
+            <article class="tarjeta">
+                <div class="demo-span">
+                    <div class="caja caja-span">Ocupa 2 columnas (span 2)</div>
+                    <div class="caja">Normal</div>
+                    <div class="caja">Normal</div>
+                    <div class="caja">Normal</div>
+                    <div class="caja">Normal</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 6. justify-items y align-items -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">6. justify-items y align-items</h2>
+            <p class="explicacion"><span class="cod">justify-items</span> alinea el contenido dentro de cada celda en horizontal. <span class="cod">align-items</span> lo hace en vertical.</p>
+            <article class="tarjeta">
+                <div class="demo-align">
+                    <div class="caja caja-chico">izquierda</div>
+                    <div class="caja caja-chico">centro</div>
+                    <div class="caja caja-chico">derecha</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 7. grid-template-areas -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">7. grid-template-areas</h2>
+            <p class="explicacion">Es la propiedad mas poderosa de Grid. Te permite nombrar zonas del layout como si fuera un mapa. Muy usada para estructurar paginas completas.</p>
+            <article class="tarjeta">
+                <div class="demo-areas">
+                    <div class="caja area-header">header</div>
+                    <div class="caja area-sidebar">sidebar</div>
+                    <div class="caja area-main">main</div>
+                    <div class="caja area-footer">footer</div>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>© 2026 Jeimar Rubiano. Todos los derechos reservados.</div>
+    </footer>
+
+</body>
+</html>

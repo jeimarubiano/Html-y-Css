@@ -1,0 +1,139 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url(fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+header{
+    background: rgb(15, 2, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 2px solid purple;
+}
+.logo{
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    white-space: nowrap;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    gap: 40px;
+}
+nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+nav a:hover{
+    color: rgba(218, 218, 248, 0.507);
+
+}
+.logo2{
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+.tarjeta{
+display: flex;
+background: rgba(0, 0, 0, 0.322);
+justify-content: flex-start;
+align-items: center;
+flex-direction: column;
+gap:  10px;
+width: 400px;
+height: 400px;
+margin: auto;
+padding-top: 50px;
+border-radius: 30px;
+border: 3px solid rgba(43, 22, 161, 0.281);
+box-shadow: 0 8px 50px purple;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta:hover{
+    
+transform: translateY(-8px);
+box-shadow: 0 15px 40px purple;
+}
+
+.foto {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+}
+
+.foto::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(purple, blue, cyan, purple);
+    animation: luzSuave 3s linear infinite;
+    z-index: -1;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes luzSuave {
+    from { filter: hue-rotate(0deg); }
+    to   { filter: hue-rotate(360deg); }
+}
+.descripcion{
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+footer{
+    display: flex;
+    background: rgb(15, 2, 51);
+    margin-top: auto;
+    padding: 15px 20px;
+    justify-content: center;
+}
+footer div{
+    color: white;
+}

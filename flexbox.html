@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="flexbox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">JEIMAR RUBIANO</div>
+        <nav>
+            <a href="Portafolio.html">PORTAFOLIO</a>
+            <a href="grid.html">GRID</a>
+            <a href="index.html">CARRUSEL</a>
+        </nav>
+        <div class="logo2">FLEXBOX</div>
+    </header>
+
+    <main>
+
+        <!-- 1. display flex -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">1. display: flex</h2>
+            <p class="explicacion">Al poner <span class="cod">display: flex</span> en un contenedor, sus hijos se organizan automaticamente en fila.</p>
+            <article class="tarjeta">
+                <div class="demo-row">
+                    <div class="caja">Caja 1</div>
+                    <div class="caja">Caja 2</div>
+                    <div class="caja">Caja 3</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 2. flex-direction -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">2. flex-direction</h2>
+            <p class="explicacion"><span class="cod">row</span> los pone en fila horizontal. <span class="cod">column</span> los pone en columna vertical.</p>
+            <article class="tarjeta">
+                <div class="demo-column">
+                    <div class="caja">Columna 1</div>
+                    <div class="caja">Columna 2</div>
+                    <div class="caja">Columna 3</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 3. justify-content -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">3. justify-content</h2>
+            <p class="explicacion">Controla como se distribuye el espacio entre los elementos en horizontal.</p>
+            <article class="tarjeta tarjeta-grande">
+                <p class="label">justify-content: center</p>
+                <div class="demo-fila" style="justify-content: center;">
+                    <div class="caja">A</div><div class="caja">B</div><div class="caja">C</div>
+                </div>
+                <p class="label">justify-content: space-between</p>
+                <div class="demo-fila" style="justify-content: space-between;">
+                    <div class="caja">A</div><div class="caja">B</div><div class="caja">C</div>
+                </div>
+                <p class="label">justify-content: space-around</p>
+                <div class="demo-fila" style="justify-content: space-around;">
+                    <div class="caja">A</div><div class="caja">B</div><div class="caja">C</div>
+                </div>
+                <p class="label">justify-content: flex-end</p>
+                <div class="demo-fila" style="justify-content: flex-end;">
+                    <div class="caja">A</div><div class="caja">B</div><div class="caja">C</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 4. align-items -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">4. align-items</h2>
+            <p class="explicacion"><span class="cod">align-items: center</span> alinea todos los elementos al centro vertical sin importar su altura.</p>
+            <article class="tarjeta">
+                <div class="demo-align">
+                    <div class="caja" style="height:80px;">Alto</div>
+                    <div class="caja" style="height:50px;">Medio</div>
+                    <div class="caja" style="height:30px;">Bajo</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 5. gap -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">5. gap</h2>
+            <p class="explicacion"><span class="cod">gap</span> define el espacio entre elementos, sin necesidad de usar margenes.</p>
+            <article class="tarjeta tarjeta-grande">
+                <p class="label">gap: 4px</p>
+                <div class="demo-fila" style="gap: 4px;">
+                    <div class="caja">1</div><div class="caja">2</div><div class="caja">3</div>
+                </div>
+                <p class="label">gap: 20px</p>
+                <div class="demo-fila" style="gap: 20px;">
+                    <div class="caja">1</div><div class="caja">2</div><div class="caja">3</div>
+                </div>
+                <p class="label">gap: 50px</p>
+                <div class="demo-fila" style="gap: 50px;">
+                    <div class="caja">1</div><div class="caja">2</div><div class="caja">3</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 6. flex-wrap -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">6. flex-wrap</h2>
+            <p class="explicacion">Con <span class="cod">flex-wrap: wrap</span> los elementos saltan a la siguiente linea cuando no caben.</p>
+            <article class="tarjeta">
+                <div class="demo-wrap">
+                    <div class="caja">Elemento 1</div>
+                    <div class="caja">Elemento 2</div>
+                    <div class="caja">Elemento 3</div>
+                    <div class="caja">Elemento 4</div>
+                    <div class="caja">Elemento 5</div>
+                    <div class="caja">Elemento 6</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 7. flex-grow -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">7. flex-grow</h2>
+            <p class="explicacion"><span class="cod">flex-grow</span> indica cuanto puede crecer cada elemento. Si uno tiene 2 y otro 1, el primero ocupa el doble.</p>
+            <article class="tarjeta">
+                <div class="demo-grow">
+                    <div class="caja" style="flex-grow:1;">grow: 1</div>
+                    <div class="caja" style="flex-grow:2;">grow: 2</div>
+                    <div class="caja" style="flex-grow:3;">grow: 3</div>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>© 2026 Jeimar Rubiano. Todos los derechos reservados.</div>
+    </footer>
+
+</body>
+</html>

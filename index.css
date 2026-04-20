@@ -1,121 +1,121 @@
-/* ============================================================
-   RESET: quita márgenes por defecto del navegador
-============================================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ============================================================
-   BODY: fondo de toda la página
-   flex-direction: column pone header, main y footer en columna
-============================================================ */
 body {
     background-color: #000;
     background-image: url("https://wallpapers.com/images/high/wounded-jiraiya-anime-naruto-y1qx6l5t83nlsmz3.webp");
-    background-size: cover;       /* la imagen cubre toda la pantalla */
-    background-position: center;  /* centra la imagen */
-    background-attachment: fixed; /* la imagen no se mueve al hacer scroll */
-    min-height: 100vh;            /* ocupa toda la altura de la pantalla */
+    background-size: cover;
+    background-position: center;  
+    background-attachment: fixed; 
+    min-height: 100vh;           
     display: flex;
-    flex-direction: column;       /* apila header, main y footer en columna */
+    flex-direction: column; 
 }
 
-/* ============================================================
-   HEADER: barra de navegación arriba
-============================================================ */
 .cabecera {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* negro semitransparente */
+    background-color: rgba(0, 0, 0, 0.75); 
     padding: 15px 40px;
     display: flex;
-    align-items: center;          /* centra verticalmente el título y el menú */
-    justify-content: space-between; /* título a la izquierda, menú a la derecha */
+    align-items: center;          
 }
 
-/* Título del header */
+.menu {
+    flex: 1;
+}
+
 .titulo {
-    color: #f0a500;               /* dorado */
+    color: #f0a500;
     font-size: 22px;
 }
 
-/* Lista del menú: quita los puntos y la pone en fila */
 .menu ul {
-    list-style: none;             /* quita los puntos de la lista */
+    list-style: none;
+    justify-content: center;
+    gap: 30px;
     display: flex;
-    gap: 30px;                    /* espacio entre cada opción */
 }
 
-/* Links del menú */
 .menu ul li a {
     color: white;
-    text-decoration: none;        /* quita el subrayado */
+    text-decoration: none;
     font-size: 15px;
-    transition: color 0.3s;       /* animación suave al hacer hover */
+    transition: color 0.3s;
 }
 
 .menu ul li a:hover {
-    color: #f0a500;               /* se vuelve dorado al pasar el mouse */
+    color: #f0a500;     
 }
 
-/* ============================================================
-   MAIN: contenedor de las tarjetas, ocupa el espacio disponible
-============================================================ */
 .contenedor {
-    flex: 1;                      /* ocupa todo el espacio entre header y footer */
+    flex: 1;                      
     display: flex;
     gap: 40px;
     padding: 60px 30px;
-    justify-content: center;      /* centra las tarjetas horizontalmente */
-    align-items: center;          /* centra las tarjetas verticalmente */
-    flex-wrap: wrap;              /* si la pantalla es pequeña, bajan de línea */
+    justify-content: center;     
+    align-items: center;          
+    flex-wrap: wrap;             
 }
 
-/* ============================================================
-   TARJETA: cada perfil individual
-============================================================ */
+/* ── CARRUSEL ── */
+.carrusel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Todas las tarjetas ocultas por defecto */
 .tarjeta {
+    display: none;
     width: 220px;
-    background-color: rgba(71, 62, 54, 0.88); /* fondo semitransparente */
+    background-color: rgba(71, 62, 54, 0.88); 
     border-radius: 20px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;       /* apila foto, nombre, rol, descripción y botón */
-    align-items: center;          /* centra todo horizontalmente */
+    flex-direction: column;   
+    align-items: center;          
     gap: 10px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     transition: background 0.3s;
+    animation: aparecer 0.4s ease;
+}
+
+/* Solo la activa se muestra */
+.tarjeta.activa {
+    display: flex;
 }
 
 .tarjeta:hover {
-    background-color: rgba(0, 0, 0, 0.7); /* se oscurece al pasar el mouse */
+    background-color: rgba(0, 0, 0, 0.7); 
 }
 
-/* Foto circular */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .fotoperfil img {
     width: 90px;
     height: 90px;
-    border-radius: 50%;           /* hace la imagen circular */
-    object-fit: cover;            /* recorta sin deformar */
-    border: 3px solid #f0a500;    /* borde dorado */
+    border-radius: 50%;           
+    object-fit: cover;            
+    border: 3px solid #f0a500;   
 }
 
-/* Nombre */
 .nombre {
     color: white;
     font-size: 16px;
     text-align: center;
 }
 
-/* Rol */
 .rol {
-    color: #f0a500;               /* dorado */
+    color: #f0a500;               
     font-size: 12px;
     text-align: center;
 }
 
-/* Descripción */
 .descripcion {
     color: #ccc;
     font-size: 12px;
@@ -123,7 +123,6 @@ body {
     line-height: 1.5;
 }
 
-/* Botón */
 .boton {
     margin-top: 5px;
     padding: 8px 20px;
@@ -137,18 +136,62 @@ body {
 }
 
 .boton:hover {
-    background-color: #fff;       /* se vuelve blanco al pasar el mouse */
+    background-color: #fff;       
 }
 
-/* FOOTER: pie de página */
+/* ── CONTROLES ── */
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-carrusel {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #f0a500;
+    color: #f0a500;
+    font-size: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-carrusel:hover {
+    background: #f0a500;
+    color: #000;
+}
+
+/* ── PUNTOS ── */
+.puntos {
+    display: flex;
+    gap: 8px;
+}
+
+.punto {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.punto.activo-punto {
+    background: #f0a500;
+    transform: scale(1.4);
+}
+
+/* ── FOOTER ── */
 .pie {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75);
     padding: 20px;
-    text-align: center;           /* centra el texto */
+    text-align: center;           
     color: #aaa;                  
     font-size: 13px;
     display: flex;
     flex-direction: column;
-    gap: 5px;                     /* espacio entre las dos líneas de texto */
+    gap: 5px;                  
 }

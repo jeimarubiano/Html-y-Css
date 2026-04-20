@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url(fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Cinzel", serif;
+}
+
+header {
+    background: rgb(15, 2, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 2px solid purple;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: "Cinzel", serif;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+}
+
+nav a:hover {
+    color: rgba(218, 218, 248, 0.507);
+}
+
+.logo2 {
+    color: white;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    padding: 10px 15px;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 30px 80px;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* SECCIONES */
+.seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.titulo-seccion {
+    color: white;
+    font-size: 15px;
+    font-family: "Cinzel", serif;
+    border-left: 3px solid purple;
+    padding-left: 12px;
+}
+
+.explicacion {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    font-family: Georgia, serif;
+    line-height: 1.8;
+    padding: 0 4px;
+}
+
+.cod {
+    color: rgba(200, 160, 255, 1);
+    font-family: monospace;
+    background: rgba(100, 0, 200, 0.2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* TARJETAS */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.322);
+    border-radius: 30px;
+    border: 3px solid rgba(43, 22, 161, 0.281);
+    box-shadow: 0 8px 50px purple;
+    padding: 24px;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px purple;
+}
+
+.tarjeta-grande {
+    gap: 14px;
+}
+
+/* LABEL dentro de tarjeta */
+.label {
+    color: rgba(180, 130, 255, 0.85);
+    font-size: 11px;
+    font-family: monospace;
+    margin-top: 6px;
+}
+
+/* CAJAS DE DEMO */
+.caja {
+    background: rgba(80, 0, 180, 0.3);
+    border: 1px solid rgba(160, 100, 255, 0.5);
+    border-radius: 8px;
+    color: white;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* DEMOS */
+.demo-row {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.demo-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.demo-fila {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.demo-align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    min-height: 100px;
+}
+
+.demo-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.demo-grow {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    background: rgb(15, 2, 51);
+    margin-top: auto;
+    padding: 15px 20px;
+    justify-content: center;
+    border-top: 2px solid purple;
+}
+
+footer div {
+    color: white;
+    font-family: "Cinzel", serif;
+    font-size: 12px;
+}
