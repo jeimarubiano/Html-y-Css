@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas HTML - Portafolio</title>
+    <link rel="stylesheet" href="guia.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">JEIMAR RUBIANO</div>
+        <nav>
+            <a href="Portafolio.html">PORTAFOLIO</a>
+            <a href="guia-css.html">VER CSS</a>
+        </nav>
+        <div class="logo2">GUÍA HTML</div>
+    </header>
+
+    <main>
+
+        <div class="intro">
+            <h2 class="titulo-intro">Etiquetas HTML usadas en el Portafolio</h2>
+            <p class="sub-intro">Cada etiqueta que aparece aquí fue usada en tu código real.</p>
+        </div>
+
+        <!-- !DOCTYPE -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;!DOCTYPE html&gt;</h2>
+            <p class="explicacion">No es una etiqueta, es una declaración. Le dice al navegador que el documento usa HTML5. Siempre va en la primera línea.</p>
+            <div class="ejemplo"><code>&lt;!DOCTYPE html&gt;</code></div>
+        </section>
+
+        <!-- html -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;html&gt;</h2>
+            <p class="explicacion">Es la raíz del documento. Todo el contenido de la página va dentro de ella. El atributo <span class="cod">lang="es"</span> indica el idioma de la página.</p>
+            <div class="ejemplo"><code>&lt;html lang="es"&gt; ... &lt;/html&gt;</code></div>
+        </section>
+
+        <!-- head -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;head&gt;</h2>
+            <p class="explicacion">Contiene información del documento que el usuario no ve directamente: el título de la pestaña, los estilos, las fuentes y la configuración de pantalla.</p>
+            <div class="ejemplo"><code>&lt;head&gt; ... &lt;/head&gt;</code></div>
+        </section>
+
+        <!-- meta charset -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;meta charset="UTF-8"&gt;</h2>
+            <p class="explicacion">Define la codificación de caracteres. Con UTF-8 la página puede mostrar tildes, ñ y símbolos especiales correctamente.</p>
+            <div class="ejemplo"><code>&lt;meta charset="UTF-8"&gt;</code></div>
+        </section>
+
+        <!-- meta viewport -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;meta name="viewport"&gt;</h2>
+            <p class="explicacion">Hace que la página se vea bien en celulares y tablets. Sin esta línea el diseño se vería muy pequeño en móviles.</p>
+            <div class="ejemplo"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></div>
+        </section>
+
+        <!-- title -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;title&gt;</h2>
+            <p class="explicacion">Define el texto que aparece en la pestaña del navegador.</p>
+            <div class="ejemplo"><code>&lt;title&gt;Portafolio&lt;/title&gt;</code></div>
+        </section>
+
+        <!-- link -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;link&gt;</h2>
+            <p class="explicacion">Conecta recursos externos al documento. Se usa para cargar el archivo CSS y las fuentes de Google Fonts. El atributo <span class="cod">rel</span> indica el tipo de relación y <span class="cod">href</span> la dirección.</p>
+            <div class="ejemplo"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></div>
+        </section>
+
+        <!-- body -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;body&gt;</h2>
+            <p class="explicacion">Todo lo que el usuario ve en pantalla va dentro del body: textos, imágenes, botones, etc.</p>
+            <div class="ejemplo"><code>&lt;body&gt; ... &lt;/body&gt;</code></div>
+        </section>
+
+        <!-- header -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;header&gt;</h2>
+            <p class="explicacion">Representa la cabecera de la página. Normalmente contiene el logo y la navegación. Es una etiqueta semántica, lo que significa que le dice al navegador qué tipo de contenido hay ahí.</p>
+            <div class="ejemplo"><code>&lt;header&gt; ... &lt;/header&gt;</code></div>
+        </section>
+
+        <!-- div -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;div&gt;</h2>
+            <p class="explicacion">Es un contenedor genérico. No tiene significado propio pero sirve para agrupar elementos y aplicarles estilos. Es uno de los más usados en HTML.</p>
+            <div class="ejemplo"><code>&lt;div class="logo"&gt;JEIMAR RUBIANO&lt;/div&gt;</code></div>
+        </section>
+
+        <!-- nav -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;nav&gt;</h2>
+            <p class="explicacion">Etiqueta semántica para la barra de navegación. Indica que dentro hay enlaces para moverse entre páginas.</p>
+            <div class="ejemplo"><code>&lt;nav&gt; ... &lt;/nav&gt;</code></div>
+        </section>
+
+        <!-- a -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;a&gt;</h2>
+            <p class="explicacion">Crea un enlace. El atributo <span class="cod">href</span> indica a dónde lleva. Con <span class="cod">target="_blank"</span> el enlace abre en una pestaña nueva.</p>
+            <div class="ejemplo"><code>&lt;a href="flexbox.html"&gt;FLEXBOX&lt;/a&gt;</code></div>
+        </section>
+
+        <!-- main -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;main&gt;</h2>
+            <p class="explicacion">Contiene el contenido principal de la página. Solo debe haber uno por página. Es semántico y ayuda a la accesibilidad.</p>
+            <div class="ejemplo"><code>&lt;main&gt; ... &lt;/main&gt;</code></div>
+        </section>
+
+        <!-- section -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;section&gt;</h2>
+            <p class="explicacion">Agrupa contenido relacionado dentro del main. Se usa para dividir la página en bloques con sentido propio.</p>
+            <div class="ejemplo"><code>&lt;section&gt; ... &lt;/section&gt;</code></div>
+        </section>
+
+        <!-- article -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;article&gt;</h2>
+            <p class="explicacion">Representa un bloque de contenido independiente, como una tarjeta o una publicación. Podría existir por sí solo fuera de la página.</p>
+            <div class="ejemplo"><code>&lt;article class="tarjeta"&gt; ... &lt;/article&gt;</code></div>
+        </section>
+
+        <!-- img -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;img&gt;</h2>
+            <p class="explicacion">Muestra una imagen. <span class="cod">src</span> es la dirección de la imagen y <span class="cod">alt</span> es el texto alternativo que se muestra si la imagen no carga, también usado por lectores de pantalla.</p>
+            <div class="ejemplo"><code>&lt;img src="foto.jpg" alt="Jeimar"&gt;</code></div>
+        </section>
+
+        <!-- p -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;p&gt;</h2>
+            <p class="explicacion">Define un párrafo de texto. El navegador añade un salto de línea automático antes y después.</p>
+            <div class="ejemplo"><code>&lt;p class="descripcion"&gt;Soy programador en formación.&lt;/p&gt;</code></div>
+        </section>
+
+        <!-- footer -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">&lt;footer&gt;</h2>
+            <p class="explicacion">Representa el pie de página. Normalmente contiene derechos de autor, contacto o información secundaria.</p>
+            <div class="ejemplo"><code>&lt;footer&gt; ... &lt;/footer&gt;</code></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>© 2026 Jeimar Rubiano. Todos los derechos reservados.</div>
+    </footer>
+
+</body>
+</html>

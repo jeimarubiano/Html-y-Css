@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: "Cinzel", serif;
+}
+
+header {
+    background: rgb(15, 2, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 2px solid purple;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Cinzel", serif;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    color: rgba(218, 218, 248, 0.507);
+}
+
+.logo2 {
+    color: white;
+    font-weight: bold;
+    font-family: "Cinzel", serif;
+    padding: 10px 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 30px 80px;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.intro {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.titulo-intro {
+    color: white;
+    font-size: 18px;
+    font-family: "Cinzel", serif;
+}
+
+.sub-intro {
+    color: rgba(255,255,255,0.5);
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+.seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titulo-seccion {
+    color: white;
+    font-size: 15px;
+    font-family: "Cinzel", serif;
+    border-left: 3px solid purple;
+    padding-left: 12px;
+}
+
+.explicacion {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    font-family: Georgia, serif;
+    line-height: 1.8;
+    padding: 0 4px;
+}
+
+.cod {
+    color: rgba(200, 160, 255, 1);
+    font-family: monospace;
+    background: rgba(100, 0, 200, 0.2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.ejemplo {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(128, 0, 255, 0.3);
+    border-radius: 10px;
+    padding: 12px 18px;
+}
+
+.ejemplo code {
+    font-family: monospace;
+    font-size: 13px;
+    color: rgba(180, 230, 255, 0.9);
+}
+
+footer {
+    display: flex;
+    background: rgb(15, 2, 51);
+    margin-top: auto;
+    padding: 15px 20px;
+    justify-content: center;
+    border-top: 2px solid purple;
+}
+
+footer div {
+    color: white;
+    font-family: "Cinzel", serif;
+    font-size: 12px;
+}

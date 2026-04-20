@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos CSS - Portafolio</title>
+    <link rel="stylesheet" href="guia.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">JEIMAR RUBIANO</div>
+        <nav>
+            <a href="Portafolio.html">PORTAFOLIO</a>
+            <a href="guia-html.html">VER HTML</a>
+        </nav>
+        <div class="logo2">GUÍA CSS</div>
+    </header>
+
+    <main>
+
+        <div class="intro">
+            <h2 class="titulo-intro">Estilos CSS usados en el Portafolio</h2>
+            <p class="sub-intro">Cada propiedad que aparece aquí fue usada en tu archivo style.css real.</p>
+        </div>
+
+        <!-- display -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">display</h2>
+            <p class="explicacion">Define cómo se comporta un elemento en el flujo de la página.</p>
+            <div class="ejemplo"><code>display: flex;</code></div>
+            <p class="explicacion">Con <span class="cod">flex</span> el elemento se convierte en contenedor flexible y sus hijos se organizan en fila o columna. Con <span class="cod">none</span> el elemento desaparece completamente.</p>
+        </section>
+
+        <!-- flex-direction -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">flex-direction</h2>
+            <p class="explicacion">Define la dirección en que se acomodan los hijos dentro de un contenedor flex.</p>
+            <div class="ejemplo"><code>flex-direction: column;</code></div>
+            <p class="explicacion"><span class="cod">column</span> los pone uno debajo del otro. <span class="cod">row</span> (el valor por defecto) los pone uno al lado del otro.</p>
+        </section>
+
+        <!-- justify-content -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">justify-content</h2>
+            <p class="explicacion">Alinea los hijos a lo largo del eje principal (horizontal en row, vertical en column).</p>
+            <div class="ejemplo"><code>justify-content: space-between;</code></div>
+            <p class="explicacion"><span class="cod">space-between</span> pone el primer elemento al inicio y el último al final. <span class="cod">center</span> los centra. <span class="cod">flex-start</span> los pega al inicio.</p>
+        </section>
+
+        <!-- align-items -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">align-items</h2>
+            <p class="explicacion">Alinea los hijos en el eje secundario (vertical en row).</p>
+            <div class="ejemplo"><code>align-items: center;</code></div>
+            <p class="explicacion"><span class="cod">center</span> centra todos los elementos verticalmente sin importar su altura. <span class="cod">flex-start</span> los pega arriba.</p>
+        </section>
+
+        <!-- gap -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">gap</h2>
+            <p class="explicacion">Define el espacio entre los hijos de un contenedor flex o grid. Es más limpio que usar margin en cada elemento.</p>
+            <div class="ejemplo"><code>gap: 10px;</code></div>
+        </section>
+
+        <!-- flex -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">flex</h2>
+            <p class="explicacion">Le dice a un hijo cuánto espacio puede ocupar dentro del contenedor flex.</p>
+            <div class="ejemplo"><code>flex: 1;</code></div>
+            <p class="explicacion">Con <span class="cod">flex: 1</span> el elemento crece para ocupar todo el espacio disponible. Se usó en el menú para que ocupara el centro entre el logo y el logo2.</p>
+        </section>
+
+        <!-- background-image -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">background-image</h2>
+            <p class="explicacion">Pone una imagen de fondo en un elemento.</p>
+            <div class="ejemplo"><code>background-image: url(fondo.jpg);</code></div>
+            <p class="explicacion">La dirección puede ser una ruta local como <span class="cod">fondo.jpg</span> o una URL de internet.</p>
+        </section>
+
+        <!-- background-size -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">background-size</h2>
+            <p class="explicacion">Controla el tamaño de la imagen de fondo.</p>
+            <div class="ejemplo"><code>background-size: cover;</code></div>
+            <p class="explicacion"><span class="cod">cover</span> hace que la imagen cubra todo el elemento sin dejar espacios en blanco, recortando si es necesario.</p>
+        </section>
+
+        <!-- background-position -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">background-position</h2>
+            <p class="explicacion">Indica en qué parte del elemento se ubica la imagen de fondo.</p>
+            <div class="ejemplo"><code>background-position: center;</code></div>
+            <p class="explicacion"><span class="cod">center</span> centra la imagen tanto horizontal como verticalmente.</p>
+        </section>
+
+        <!-- background-attachment -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">background-attachment</h2>
+            <p class="explicacion">Define si el fondo se mueve o se queda fijo al hacer scroll.</p>
+            <div class="ejemplo"><code>background-attachment: fixed;</code></div>
+            <p class="explicacion"><span class="cod">fixed</span> hace que el fondo quede estático mientras el contenido se desplaza encima, creando un efecto parallax.</p>
+        </section>
+
+        <!-- background-repeat -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">background-repeat</h2>
+            <p class="explicacion">Controla si la imagen de fondo se repite cuando es más pequeña que el elemento.</p>
+            <div class="ejemplo"><code>background-repeat: no-repeat;</code></div>
+            <p class="explicacion"><span class="cod">no-repeat</span> evita que la imagen se repita.</p>
+        </section>
+
+        <!-- min-height -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">min-height</h2>
+            <p class="explicacion">Define la altura mínima de un elemento. El elemento puede crecer más si el contenido lo necesita.</p>
+            <div class="ejemplo"><code>min-height: 100vh;</code></div>
+            <p class="explicacion"><span class="cod">100vh</span> equivale al 100% de la altura visible de la pantalla. Se usa en el body para que la página siempre ocupe la pantalla completa.</p>
+        </section>
+
+        <!-- margin -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">margin</h2>
+            <p class="explicacion">Define el espacio exterior de un elemento, es decir el espacio entre ese elemento y los de su alrededor.</p>
+            <div class="ejemplo"><code>margin: 0;</code></div>
+            <p class="explicacion"><span class="cod">margin: 0</span> elimina el margen por defecto que tienen el body y otros elementos. <span class="cod">margin: auto</span> centra horizontalmente un elemento con ancho definido.</p>
+        </section>
+
+        <!-- padding -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">padding</h2>
+            <p class="explicacion">Define el espacio interior de un elemento, entre su borde y su contenido.</p>
+            <div class="ejemplo"><code>padding: 20px 50px;</code></div>
+            <p class="explicacion">Con dos valores: el primero es arriba y abajo, el segundo es izquierda y derecha. Con <span class="cod">padding-top</span> se aplica solo arriba.</p>
+        </section>
+
+        <!-- box-sizing -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">box-sizing</h2>
+            <p class="explicacion">Define cómo se calcula el tamaño total de un elemento.</p>
+            <div class="ejemplo"><code>box-sizing: border-box;</code></div>
+            <p class="explicacion">Con <span class="cod">border-box</span> el padding y el borde se incluyen dentro del ancho y alto del elemento, así no se desborda. Es la opción más predecible.</p>
+        </section>
+
+        <!-- width -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">width</h2>
+            <p class="explicacion">Define el ancho de un elemento.</p>
+            <div class="ejemplo"><code>width: 400px;</code></div>
+            <p class="explicacion">Puede ser en píxeles <span class="cod">px</span>, porcentaje <span class="cod">%</span> o relativo al viewport <span class="cod">vw</span>. Con <span class="cod">100%</span> ocupa todo el ancho de su contenedor.</p>
+        </section>
+
+        <!-- height -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">height</h2>
+            <p class="explicacion">Define la altura de un elemento.</p>
+            <div class="ejemplo"><code>height: 400px;</code></div>
+        </section>
+
+        <!-- border-radius -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">border-radius</h2>
+            <p class="explicacion">Redondea las esquinas de un elemento.</p>
+            <div class="ejemplo"><code>border-radius: 30px;</code></div>
+            <p class="explicacion">Con <span class="cod">50%</span> convierte el elemento en un círculo perfecto si tiene el mismo ancho y alto.</p>
+        </section>
+
+        <!-- border -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">border</h2>
+            <p class="explicacion">Define el borde de un elemento. Se indica el grosor, el estilo y el color.</p>
+            <div class="ejemplo"><code>border: 3px solid rgba(43, 22, 161, 0.281);</code></div>
+            <p class="explicacion"><span class="cod">solid</span> es una línea continua. <span class="cod">none</span> elimina el borde.</p>
+        </section>
+
+        <!-- border-bottom / border-top -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">border-bottom / border-top</h2>
+            <p class="explicacion">Aplica borde solo en un lado del elemento.</p>
+            <div class="ejemplo"><code>border-bottom: 2px solid purple;</code></div>
+        </section>
+
+        <!-- box-shadow -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">box-shadow</h2>
+            <p class="explicacion">Añade una sombra alrededor del elemento. Los valores son: desplazamiento horizontal, vertical, difuminado y color.</p>
+            <div class="ejemplo"><code>box-shadow: 0 8px 50px purple;</code></div>
+        </section>
+
+        <!-- color -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">color</h2>
+            <p class="explicacion">Define el color del texto de un elemento.</p>
+            <div class="ejemplo"><code>color: white;</code></div>
+            <p class="explicacion">Se puede escribir como nombre (<span class="cod">white</span>), hexadecimal (<span class="cod">#f0a500</span>) o con transparencia (<span class="cod">rgba(255,255,255,0.7)</span>).</p>
+        </section>
+
+        <!-- background / background-color -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">background / background-color</h2>
+            <p class="explicacion">Define el color de fondo de un elemento.</p>
+            <div class="ejemplo"><code>background: rgba(0, 0, 0, 0.322);</code></div>
+            <p class="explicacion"><span class="cod">rgba</span> permite añadir transparencia con el cuarto valor (0 = transparente, 1 = sólido).</p>
+        </section>
+
+        <!-- font-size -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">font-size</h2>
+            <p class="explicacion">Define el tamaño del texto.</p>
+            <div class="ejemplo"><code>font-size: 14px;</code></div>
+        </section>
+
+        <!-- font-weight -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">font-weight</h2>
+            <p class="explicacion">Define el grosor del texto.</p>
+            <div class="ejemplo"><code>font-weight: bold;</code></div>
+            <p class="explicacion"><span class="cod">bold</span> lo pone en negrita. También se pueden usar números como <span class="cod">400</span> (normal) o <span class="cod">700</span> (negrita).</p>
+        </section>
+
+        <!-- font-family -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">font-family</h2>
+            <p class="explicacion">Define la fuente del texto.</p>
+            <div class="ejemplo"><code>font-family: "Cinzel", serif;</code></div>
+            <p class="explicacion">Se pueden poner varias fuentes separadas por coma. Si la primera no carga, el navegador usa la siguiente. <span class="cod">serif</span> es una fuente genérica de respaldo.</p>
+        </section>
+
+        <!-- font-style -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">font-style</h2>
+            <p class="explicacion">Define si el texto es normal o cursiva.</p>
+            <div class="ejemplo"><code>font-style: normal;</code></div>
+        </section>
+
+        <!-- text-align -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">text-align</h2>
+            <p class="explicacion">Alinea el texto dentro de su elemento.</p>
+            <div class="ejemplo"><code>text-align: center;</code></div>
+            <p class="explicacion">También puede ser <span class="cod">left</span>, <span class="cod">right</span> o <span class="cod">justify</span>.</p>
+        </section>
+
+        <!-- text-decoration -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">text-decoration</h2>
+            <p class="explicacion">Controla decoraciones del texto como subrayado.</p>
+            <div class="ejemplo"><code>text-decoration: none;</code></div>
+            <p class="explicacion">Se usa en los enlaces <span class="cod">&lt;a&gt;</span> para quitarles el subrayado que traen por defecto.</p>
+        </section>
+
+        <!-- line-height -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">line-height</h2>
+            <p class="explicacion">Define el espacio entre líneas de texto.</p>
+            <div class="ejemplo"><code>line-height: 1.8;</code></div>
+            <p class="explicacion">Un valor de <span class="cod">1.8</span> significa que el espacio entre líneas es 1.8 veces el tamaño del texto. Mejora la legibilidad.</p>
+        </section>
+
+        <!-- white-space -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">white-space</h2>
+            <p class="explicacion">Controla cómo se maneja el espacio en blanco dentro de un elemento.</p>
+            <div class="ejemplo"><code>white-space: nowrap;</code></div>
+            <p class="explicacion"><span class="cod">nowrap</span> evita que el texto haga salto de línea. Se usó en el logo para que no se parta en dos líneas.</p>
+        </section>
+
+        <!-- object-fit -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">object-fit</h2>
+            <p class="explicacion">Define cómo se ajusta una imagen dentro de su contenedor.</p>
+            <div class="ejemplo"><code>object-fit: cover;</code></div>
+            <p class="explicacion"><span class="cod">cover</span> hace que la imagen cubra todo el espacio sin deformarse, recortando los bordes si es necesario.</p>
+        </section>
+
+        <!-- position -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">position</h2>
+            <p class="explicacion">Controla cómo se posiciona un elemento en la página.</p>
+            <div class="ejemplo"><code>position: relative;</code></div>
+            <p class="explicacion"><span class="cod">relative</span> posiciona el elemento respecto a su lugar normal. <span class="cod">absolute</span> lo posiciona respecto al padre con <span class="cod">position: relative</span>.</p>
+        </section>
+
+        <!-- inset -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">inset</h2>
+            <p class="explicacion">Atajo para definir top, right, bottom y left al mismo tiempo. Solo funciona en elementos con position.</p>
+            <div class="ejemplo"><code>inset: 0;</code></div>
+            <p class="explicacion"><span class="cod">inset: 0</span> hace que el elemento ocupe exactamente el mismo espacio que su padre posicionado.</p>
+        </section>
+
+        <!-- z-index -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">z-index</h2>
+            <p class="explicacion">Controla qué elemento queda encima cuando dos se superponen. El número mayor queda encima.</p>
+            <div class="ejemplo"><code>z-index: 1;</code></div>
+        </section>
+
+        <!-- transition -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">transition</h2>
+            <p class="explicacion">Anima el cambio de una propiedad CSS de forma suave cuando esta cambia, por ejemplo al hacer hover.</p>
+            <div class="ejemplo"><code>transition: transform 0.3s ease, box-shadow 0.3s ease;</code></div>
+            <p class="explicacion">Los valores son: la propiedad que anima, la duración y el tipo de velocidad (<span class="cod">ease</span> empieza lento, acelera y termina lento).</p>
+        </section>
+
+        <!-- transform -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">transform</h2>
+            <p class="explicacion">Aplica transformaciones visuales a un elemento sin afectar el layout.</p>
+            <div class="ejemplo"><code>transform: translateY(-8px);</code></div>
+            <p class="explicacion"><span class="cod">translateY(-8px)</span> mueve el elemento 8px hacia arriba. Se usó en el hover de las tarjetas para el efecto de elevación.</p>
+        </section>
+
+        <!-- animation -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">animation</h2>
+            <p class="explicacion">Aplica una animación definida con @keyframes a un elemento.</p>
+            <div class="ejemplo"><code>animation: luzSuave 3s linear infinite;</code></div>
+            <p class="explicacion">Los valores son: nombre de la animación, duración, velocidad (<span class="cod">linear</span> = constante) y repetición (<span class="cod">infinite</span> = sin fin).</p>
+        </section>
+
+        <!-- @keyframes -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">@keyframes</h2>
+            <p class="explicacion">Define los estados de una animación CSS. <span class="cod">from</span> es el estado inicial y <span class="cod">to</span> el final. También se pueden usar porcentajes como <span class="cod">0%</span>, <span class="cod">50%</span>, <span class="cod">100%</span>.</p>
+            <div class="ejemplo"><code>@keyframes luzSuave { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }</code></div>
+        </section>
+
+        <!-- filter -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">filter</h2>
+            <p class="explicacion">Aplica efectos visuales a un elemento como desenfoque, brillo o rotación de color.</p>
+            <div class="ejemplo"><code>filter: hue-rotate(360deg);</code></div>
+            <p class="explicacion"><span class="cod">hue-rotate</span> rota los colores del espectro. Se usó para animar el borde de la foto de perfil.</p>
+        </section>
+
+        <!-- content -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">content</h2>
+            <p class="explicacion">Propiedad obligatoria en los pseudo-elementos <span class="cod">::before</span> y <span class="cod">::after</span>. Define qué contenido insertar.</p>
+            <div class="ejemplo"><code>content: '';</code></div>
+            <p class="explicacion">Con <span class="cod">''</span> se inserta un elemento vacío que sirve como decoración o fondo.</p>
+        </section>
+
+        <!-- margin-top -->
+        <section class="seccion">
+            <h2 class="titulo-seccion">margin-top</h2>
+            <p class="explicacion">Aplica margen solo en la parte superior del elemento.</p>
+            <div class="ejemplo"><code>margin-top: auto;</code></div>
+            <p class="explicacion"><span class="cod">auto</span> en el footer dentro de un flex column empuja el footer hasta el fondo de la página.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>© 2026 Jeimar Rubiano. Todos los derechos reservados.</div>
+    </footer>
+
+</body>
+</html>
